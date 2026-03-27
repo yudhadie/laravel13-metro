@@ -88,17 +88,26 @@
                          <input class="kt-switch" data-kt-theme-switch-state="dark" data-kt-theme-switch-toggle="true"
                              name="check" type="checkbox" value="1" />
                      </div>
-                     <a class="kt-btn kt-btn-outline justify-center w-full" href="#">
+                     {{-- <a class="kt-btn kt-btn-outline justify-center w-full" href="#">
                          Log out
-                     </a>
+                     </a> --}}
+                     <div onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                         <a href="{{ route('logout') }}" class="kt-btn kt-btn-outline justify-center w-full">
+                             Sign Out
+                         </a>
+                     </div>
                  </div>
              </div>
          </div>
-         <div class="flex items-center gap-1.5">
+         <div class="flex items-center gap-1.5"
+             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
              <a class="kt-btn kt-btn-ghost kt-btn-icon size-8 hover:bg-background hover:[&_i]:text-primary"
-                 href="#">
+                 href="{{ route('logout') }}">
                  <i class="ki-filled ki-exit-right"></i>
              </a>
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                 @csrf
+             </form>
          </div>
      </div>
  </div>
