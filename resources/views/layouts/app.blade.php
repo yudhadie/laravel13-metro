@@ -1,36 +1,35 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!DOCTYPE html>
+  <html class="h-full" data-kt-theme="true" data-kt-theme-mode="system" dir="ltr"
+      {{ str_replace('_', '-', app()->getLocale()) }}>
+  @include('layouts.partials.head')
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+  <body
+      class="antialiased flex h-full text-base text-foreground bg-background [--header-height:60px] [--sidebar-width:270px] lg:overflow-hidden bg-muted">
+      @include('layouts.partials.theme')
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+      <div class="flex grow">
+          @include('layouts.partials.header')
+          @include('layouts.partials.sidebar')
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+          <div class="flex flex-col lg:flex-row grow pt-(--header-height) lg:pt-0">
+              <div
+                  class="flex flex-col grow items-stretch rounded-xl bg-background border border-input lg:ms-(--sidebar-width) mt-0 lg:mt-[15px] m-[15px]">
+                  <div class="flex flex-col grow kt-scrollable-y-auto [--kt-scrollbar-width:auto] pt-5"
+                      id="scrollable_content">
+                      <main class="grow" role="content">
+                          @include('layouts.partials.toolbar')
+                          <div class="kt-container-fluid">
+                              {{ $slot }}
+                          </div>
+                      </main>
+                      @include('layouts.partials.footer')
+                  </div>
+              </div>
+          </div>
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+      </div>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
-</html>
+      @include('layouts.partials.script')
+  </body>
+
+  </html>
