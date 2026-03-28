@@ -19,7 +19,7 @@
                       <main class="grow" role="content">
                           @include('layouts.partials.toolbar')
                           <div class="kt-container-fluid">
-                              {{ $slot }}
+                              @yield('content')
                           </div>
                       </main>
                       @include('layouts.partials.footer')

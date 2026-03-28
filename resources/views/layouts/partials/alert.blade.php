@@ -11,7 +11,7 @@
                 </svg>
             </div>
             <div class="kt-alert-content">
-                <div class="kt-alert-title">GAGAL!</div>
+                <div class="kt-alert-title">GAGAL</div>
                 <ul class="list-disc list-inside text-sm mt-1 space-y-0.5">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
