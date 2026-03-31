@@ -25,7 +25,7 @@
                 </div>
                 <div class="text-center mb-2.5">
                     <h3 class="text-lg font-medium text-mono leading-none mb-2.5">
-                        SIGN IN
+                        LOGIN
                     </h3>
                     <div class="flex items-center justify-center font-medium">
                         <span class="text-sm text-secondary-foreground me-1.5">
@@ -86,11 +86,11 @@
                 <label class="kt-label">
                     <input class="kt-checkbox kt-checkbox-sm" type="checkbox" name="remember" value="1" />
                     <span class="kt-checkbox-label">
-                        Remember me
+                        Ingat saya
                     </span>
                 </label>
                 <button class="kt-btn kt-btn-primary flex justify-center grow">
-                    Sign In
+                    Login
                 </button>
             </form>
         </div>

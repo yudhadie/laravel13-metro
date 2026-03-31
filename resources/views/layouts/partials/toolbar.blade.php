@@ -3,19 +3,9 @@
      <div class="kt-container-fluid flex items-center justify-between flex-wrap gap-3">
          <div class="flex items-center flex-wrap gap-1 lg:gap-5">
              <h1 class="font-medium text-lg text-mono">
-                 Dashboard
+                 {{ $title }}
              </h1>
-             <div class="flex items-center gap-1 text-sm font-normal">
-                 <a class="text-secondary-foreground hover:text-primary" href="#">
-                     Dashboard
-                 </a>
-                 <span class="text-muted-foreground text-sm">
-                     /
-                 </span>
-                 <span class="text-secondary-foreground">
-                     Account
-                 </span>
-             </div>
+             @include('layouts.partials.breadcrumbs')
          </div>
          <div class="flex items-center flex-wrap gap-1.5 lg:gap-3.5">
              @yield('head_button')
