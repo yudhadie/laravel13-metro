@@ -5,7 +5,7 @@
              <h1 class="font-medium text-lg text-mono">
                  {{ $title }}
              </h1>
-             @include('layouts.partials.breadcrumbs')
+             {!! $breadcrumbs ?? '' !!}
          </div>
          <div class="flex items-center flex-wrap gap-1.5 lg:gap-3.5">
              @yield('head_button')

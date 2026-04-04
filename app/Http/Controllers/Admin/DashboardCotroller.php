@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Diglactic\Breadcrumbs\Breadcrumbs;
 use Illuminate\Http\Request;
 
 class DashboardCotroller extends Controller
@@ -11,6 +12,7 @@ class DashboardCotroller extends Controller
     {
         return view('admin.dashboard', [
             'title' => 'Dashboard',
+            'breadcrumbs' => Breadcrumbs::render('dashboard'),
         ]);
     }
 }
